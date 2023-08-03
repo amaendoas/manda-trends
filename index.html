@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manda Trend</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        font-size: 62.5%;
+        --fontColor: #646869;
+        --titleColor: #231f20;
+        --details: #b2b2b2;
+        --primary: #e9492a;
+        --secondary: #e72357;
+        --highlight: #fff;
+      }
+/*---------- LAYOUT ----------*/
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        display: grid;
+        grid-template-rows: 13.9rem auto 12.5rem;
+        grid-template-areas:
+          'header'
+          'content'
+          'footer';
+        padding: clamp(1rem, 2vw, 2rem);
+        height: 100%;
+        max-width: 640px;
+        margin: 0 auto;
+      }
+
+      h1,
+      h2 {
+        color: var(--titleColor);
+      }
+
+      h1 {
+        line-height: 2.5rem;
+        font-size: clamp(1.4rem, 4vw, 2.4rem);
+        line-height: clamp(1.6rem, 4vw, 2.5rem);
+      }
+
+      h2 {
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+        line-height: clamp(1.5rem, 3vw, 2.3rem);
+      }
+
+      p {
+        color: var(--fontColor);
+        font-size: clamp(1rem, 3vw, 1.4rem);
+        line-height: 1.7rem;
+      }
+/*---------- HEADER ----------*/
+      header {
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        position: relative;
+        padding: 0 clamp(1rem, 2vw, 3rem);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      #logo {
+        width: clamp(12rem, 30vw, 20rem);
+      }
+
+      .sub-title {
+        color: var(--highlight);
+        text-align: end;
+      }
+
+      li {
+        font-size: clamp(1rem, 3vw, 1.4rem);
+        line-height: 1.6rem;
+        list-style: none;
+      }
+
+      .sub-title p {
+        margin-top: 5px;
+        color: var(--highlight);
+        font-size: clamp(0.8rem, 2vw, 1rem);
+      }
+
+      #dashes {
+        position: absolute;
+        bottom: -5rem;
+        left: 0;
+      }
+
+      #balls {
+        position: absolute;
+        left: 38%;
+        bottom: -3.8rem;
+      }
+
+      #arrows {
+        position: absolute;
+        top: 1.5rem;
+        left: 50%;
+      }
+
+      #triangle {
+        position: absolute;
+        right: 3rem;
+        top: 1rem;
+      }
+
+      #zig-zag {
+        position: absolute;
+        right: 3rem;
+        bottom: 2rem;
+      }
+
+      #woman {
+        position: absolute;
+        top: 4rem;
+        right: 26%;
+        width: 15rem;
+      }
+/*---------- CONTENT ----------*/
+      main {
+        z-index: 3;
+        padding: clamp(1rem, 3vw, 3rem);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+          'main main'
+          'section-1 section-2';
+        gap: 14px;
+        position: relative;
+      }
+
+      section {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        max-height: 40rem;
+      }
+
+      .main-section {
+        grid-area: main;
+        max-height: 50rem;
+      }
+
+      .main-img {
+        width: 100%;
+        max-height: 23.4rem;
+        object-fit: cover;
+        object-position: top;
+      }
+
+      .gradient-line {
+        max-height: 4px;
+        width: 50%;
+        object-fit: cover;
+      }
+
+      .ref {
+        color: var(--details);
+        font-style: italic;
+        font-size: 1.1rem;
+        line-height: 1.7rem;
+      }
+
+      .section-img {
+        height: clamp(10rem, 10rem + 10vw, 20rem);
+        width: 100%;
+        object-fit: cover;
+      }
+      
+/*---------- FOOTER ----------*/
+      footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .signature {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--primary);
+        height: 8rem;
+      }
+
+      .copyright {
+        text-align: center;
+      }
+
+      .copyright p {
+        font-size: clamp(1rem, 1vw, 1.1rem);
+        line-height: 1.1rem;
+      }
+
+      footer img {
+        width: clamp(20rem, 20vw, 26rem);
+      }
+
+      @media (max-width: 550px) {
+        #woman {
+          width: 13rem;
+          top: 5.4rem;
+        }
+
+        #balls {
+          left: 30%;
+        }
+
+        #dashes {
+          width: 7rem;
+          bottom: -3rem;
+        }
+
+        #triangle {
+          right: 1rem;
+          top: 0.8rem;
+        }
+
+        #zig-zag {
+          position: absolute;
+          right: 1rem;
+          bottom: 1.3rem;
+        }
+
+        #arrows {
+          left: 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="./assets/dashes.png" alt="dash" id="dashes" />
+      <img src="./assets/logo.png" alt="logo" id="logo" />
+      <img src="./assets/balls.png" alt="balls" id="balls" />
+      <img src="./assets/arrows.png" alt="arrows" id="arrows" />
+      <img src="./assets/woman.png" alt="woman" id="woman" />
+      <img src="./assets/triangle.png" alt="triangle" id="triangle" />
+      <img src="./assets/zig-zag.png" alt="zig-zag" id="zig-zag" />
+      <div class="sub-title">
+        <ul>
+          <li>NRF2020</li>
+          <li>Kobe Bryant e</li>
+          <li>Whatsapp Payment</li>
+        </ul>
+        <p>edição 06</p>
+      </div>
+    </header>
+    <main>
+      <section class="main-section">
+        <img src="./assets/nrf2020.png" alt="" class="main-img" />
+        <h1>NRF 2020: conheça os top 5 assuntos do evento.</h1>
+        <p>
+          O maior evento sobre varejo do mundo mostrando as tendências,
+          oportunidades e inovações para o setor.
+        </p>
+        <p class="ref">Fonte: CMO ADOBE</p>
+        <img
+          src="./assets/line-grad-1.png"
+          alt="gradient-line"
+          class="gradient-line"
+        />
+      </section>
+      <section class="section-1">
+        <img
+          src="./assets/basket.png"
+          alt="Kobe Bryant NBA logo"
+          class="section-img"
+        />
+        <h2>Petição para colocar Kobe Bryant no logo da NBA.</h2>
+        <p class="ref">Fonte: Daily Mail</p>
+        <img
+          src="./assets/line-grad-2.png"
+          alt="gradient-line"
+          class="gradient-line"
+        />
+      </section>
+      <section class="section-2">
+        <img
+          src="./assets/whatsapp.png"
+          alt="Whatsapp logo"
+          class="section-img"
+        />
+        <h2>Whatsapp terá função de pagamentos em 2020.</h2>
+        <p class="ref">Fonte: Proxxima</p>
+        <img
+          src="./assets/line-grad-3.png"
+          alt="gradient-line"
+          class="gradient-line"
+        />
+      </section>
+    </main>
+    <footer>
+      <section class="signature">
+        <img src="./assets/signature.png" alt="footer" />
+      </section>
+      <section class="copyright">
+        <p>Copyright ® Mandarin. Todos os direitos reservados.</p>
+        <p>
+          Caso não deseje mais receber nossos e-mails, por favor
+          <a href="">clique aqui</a>.
+        </p>
+      </section>
+    </footer>
+  </body>
+</html>
