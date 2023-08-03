@@ -19,6 +19,7 @@
         --primary: #e9492a;
         --secondary: #e72357;
         --highlight: #fff;
+        --backgroundColor: #f2f2f2;
       }
 /*---------- LAYOUT ----------*/
       body {
@@ -33,6 +34,7 @@
         height: 100%;
         max-width: 640px;
         margin: 0 auto;
+        background-color: var(--backgroundColor);
       }
 
       h1,
@@ -125,6 +127,7 @@
       }
 /*---------- CONTENT ----------*/
       main {
+        background-color: var(--highlight);
         z-index: 3;
         padding: clamp(1rem, 3vw, 3rem);
         display: grid;
@@ -173,7 +176,7 @@
         width: 100%;
         object-fit: cover;
       }
-      
+
 /*---------- FOOTER ----------*/
       footer {
         display: flex;
