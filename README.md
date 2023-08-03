@@ -1,7 +1,10 @@
 # Email Marketing - Manda Trends
 Desafio reprodução de layout de corpo de email para vaga de estágio.
 
-## Preview
+## Live Preview
+[Clique aqui](https://amaendoas.github.io/manda-trends/)
+
+## Layout Preview
 
 | Notebook | Tablet | Mobile |
 |----------|--------|--------|
